@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ShoppingListServlet extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -25,7 +24,7 @@ public class ShoppingListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServeletContext().get
+        getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
     /**
@@ -39,6 +38,7 @@ public class ShoppingListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
 }
