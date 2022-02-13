@@ -15,8 +15,7 @@
         <h1>Shopping List</h1>
         <h1>Home Page</h1>
         <p>
-            Hello, ${username}
-            <a href="login?logout">Logout</a>
+            Hello, ${name} <a href="login?logout">Logout</a>
         </p>
         <h1>List</h1>
         <form action="login" method="POST">
