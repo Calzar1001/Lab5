@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- 
     Document   : shoppingList
     Created on : Feb. 7, 2022, 9:34:15 a.m.
@@ -26,11 +27,15 @@
 
             <button type="submit">Add</button>
         </form>
-        <form>
-            <p>
-                <input type="radio" name="item" value="apples">
-                apples
-            </p>
+        <form action="shoppinglist" method="post">
+            <input type="hidden" name="action" value="delete">
+
+            <c:forEach items="${items}" var="item">
+                <p>
+                    <input type="radio" name="item" value="${item}">
+                    ${item}
+                </p>
+            </c:forEach>
             <button type="submit">Delete</button>
         </form>
     </body>
