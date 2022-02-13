@@ -15,19 +15,21 @@
         <h1>Shopping List</h1>
         <h1>Home Page</h1>
         <p>
-            Hello, ${name} <a href="login?logout">Logout</a>
+            Hello, ${name} <a href="">Logout</a>
         </p>
         <h1>List</h1>
-        <form action="login" method="POST">
-            <p>
-                <label for="list" >Add item:</label>
-                <button>Add</button>
-            </p>
+        <form action="shoppinglist" method="post">
+            <input type="hidden" name="action" value="add">
+
+            <label for="item" >Add item:</label>
+            <input type="text" name="item" id="item">
+
+            <button type="submit">Add</button>
         </form>
         <form>
             <p>
-            <input type="radio" name="item" value="apples">
-            apples
+                <input type="radio" name="item" value="apples">
+                apples
             </p>
             <button type="submit">Delete</button>
         </form>
