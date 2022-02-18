@@ -2,7 +2,7 @@
 <%-- 
     Document   : shoppingList
     Created on : Feb. 7, 2022, 9:34:15 a.m.
-    Author     : calza
+    Author     : Callum Beckford
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,11 +14,10 @@
     </head>
     <body>
         <h1>Shopping List</h1>
-        <h1>Home Page</h1>
         <p>
-            Hello, ${name} <a href="">Logout</a>
+            Hello, ${name} <a href="?logout">Logout</a>
         </p>
-        <h1>List</h1>
+        <h2>List</h2>
         <form action="shoppinglist" method="post">
             <input type="hidden" name="action" value="add">
 

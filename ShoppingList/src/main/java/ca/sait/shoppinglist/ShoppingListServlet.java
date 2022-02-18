@@ -28,12 +28,17 @@ public class ShoppingListServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         String name = (String) session.getAttribute("name");
-
-        if (name == null) {
-            getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-        } else {
-            getServletContext().getRequestDispatcher("/WEB-INF/shoppinglist.jsp").forward(request, response);
+        if (session.getAttribute("name") != null) {
+            String query = request.getQueryString();
+            if (query != null && query.contains("logout")) {
+                session.invalidate();
+            } else if(name != null) {
+                getServletContext().getRequestDispatcher("/WEB-INF/shoppinglist.jsp").forward(request, response);
+            }
         }
+
+        getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+
     }
 
     /**
@@ -61,11 +66,11 @@ public class ShoppingListServlet extends HttpServlet {
             session.setAttribute("items", items);
         } else if (action != null && action.equals("delete")) {
             String item = request.getParameter("item");
-            
+
             ArrayList<String> items = (ArrayList<String>) session.getAttribute("items");
 
             items.remove(item);
-            
+
             session.setAttribute("items", items);
 
         } else {
