@@ -1,7 +1,7 @@
 <%-- 
     Document   : register
     Created on : Feb. 7, 2022, 9:33:41 a.m.
-    Author     : calza
+    Author     : Callum Beckford
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
